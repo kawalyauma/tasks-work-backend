@@ -2,6 +2,8 @@
 
 A modular, multi-tenant task and work-management API built for Cloudflare Workers.
 
+The repository also includes a modular React dashboard in `web/`, styled with an Amazon-inspired navy, orange, warm-gray and white visual system.
+
 ## Included foundations
 
 - organization registration and email/password sessions;
@@ -37,6 +39,20 @@ Copy the D1 database ID into `wrangler.toml`, then run:
 ```bash
 npm run db:local
 npm run dev
+```
+
+In a second terminal, start the frontend:
+
+```bash
+npm run dev:web
+```
+
+Open `http://localhost:5173`. Vite proxies `/v1` and `/health` requests to the Worker on port `8787`.
+
+Build the production frontend with:
+
+```bash
+npm run build:web
 ```
 
 ## Production secrets
