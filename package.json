@@ -3,8 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "workspaces": ["web"],
   "scripts": {
     "dev": "wrangler dev",
+    "dev:api": "wrangler dev",
+    "dev:web": "npm run dev --workspace web",
+    "build:web": "npm run build --workspace web",
     "deploy": "wrangler deploy",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
