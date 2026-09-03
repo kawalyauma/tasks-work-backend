@@ -1,0 +1,9 @@
+JWT_SECRET=replace-with-at-least-32-random-characters
+WHATSAPP_SUPPORT_APP_KEY=wsa_replace_me
+WHATSAPP_SUPPORT_WEBHOOK_SECRET=replace-with-a-long-random-secret
+EGOSMS_USERNAME=replace_me
+EGOSMS_PASSWORD=replace_me
+EGOSMS_SENDER_ID=TasksWork
+EGOSMS_API_URL=https://www.egosms.co/api/v1/plain/
+RESEND_API_KEY=re_replace_me
+RESEND_FROM_EMAIL=Tasks & Work <notifications@example.com>
