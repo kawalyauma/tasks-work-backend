@@ -1,0 +1,33 @@
+name = "tasks-work-backend"
+main = "src/index.ts"
+compatibility_date = "2026-09-03"
+
+[vars]
+APP_NAME = "Tasks & Work"
+APP_ENV = "development"
+WHATSAPP_SUPPORT_HUB_URL = "https://whatsapp-support-hub.ulib5000.workers.dev"
+EGOSMS_API_URL = "https://www.egosms.co/api/v1/plain/"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "tasks-work-db"
+database_id = "REPLACE_AFTER_D1_CREATION"
+migrations_dir = "migrations"
+
+[[r2_buckets]]
+binding = "FILES"
+bucket_name = "tasks-work-files"
+
+[[queues.producers]]
+binding = "NOTIFICATION_QUEUE"
+queue = "tasks-work-notifications"
+
+[[queues.consumers]]
+queue = "tasks-work-notifications"
+max_batch_size = 10
+max_batch_timeout = 5
+max_retries = 5
+dead_letter_queue = "tasks-work-notifications-dlq"
+
+[triggers]
+crons = ["*/5 * * * *", "0 5 * * *"]
